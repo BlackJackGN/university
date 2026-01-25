@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+.header h1{ /*dato che qui il div prende tutto l'header si può fare la modifica 
+            di background nell h1, altrimenti va messa esclusivamente nell'header*/
+    margin: 0px;
+    border: 5px solid black;
+    padding:15px;
+    background-color: brown;
+    text-align: center;
+}
+.elenco{
+    padding:15px;
+    width:500px;
+    background-color: antiquewhite;
+    text-align: left;
+}
+.main_content{
+    flex:1;
+    padding:15px;
+    background-color: salmon;
+    text-align: left;
+}
+.footer{
+    margin: 0px;
+    border: 5px solid black;
+    padding:15px;
+    background-color: green;
+    text-align: center;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+}

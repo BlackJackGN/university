@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Statistiche Voti</title>
+</head>
+<body>
+
+<h1>Calcolo Statistiche sui Voti</h1>
+
+<!-- Input to insert votes -->
+<div>
+    <label for="grades">Inserisci i voti (18-33) separati da virgola:</label><br>
+    <input type="text" id="grades" placeholder="Esempio: 28,30,25"><br>
+    <button onclick="calcolaStatistiche()">Calcola Statistiche</button>
+</div>
+
+<!-- Section to insert results -->
+<div class="result" id="results">
+  <label id="label-min">Voto minimo: <span id="minValue">—</span></label><br>
+  <label id="label-max">Voto massimo: <span id="maxValue">—</span></label><br>
+  <label id="label-avg">Media aritmetica: <span id="avgValue">—</span></label>
+  <!-- area per eventuali messaggi di errore -->
+  <div id="errorMsg" style="color: red; margin-top:6px;"></div>
+</div>
+
+<script>
+  function calcolaStatistiche() {
+    const input = document.getElementById("grades").value.trim();
+    // non cancellare l'intero resultsDiv, perché contiene le label richieste
+    const minSpan = document.getElementById("minValue");
+    const maxSpan = document.getElementById("maxValue");
+    const avgSpan = document.getElementById("avgValue");
+    const errDiv = document.getElementById("errorMsg");
+
+    // reset messaggi/valori
+    errDiv.textContent = "";
+    minSpan.textContent = "—";
+    maxSpan.textContent = "—";
+    avgSpan.textContent = "—";
+
+    // controllo campo vuoto (restutisco subito errore)
+    if (input === "") {
+      errDiv.textContent = "⚠️ Inserisci almeno un voto.";
+      return;
+    }
+
+    // preparo array rimuovendo eventuali voci vuote e convertendo in numeri
+    const raw = input.split(",").map(s => s.trim()).filter(s => s !== "");
+    const voti = raw.map(s => Number(s));
+
+    // validazione: isNaN e range 18-30
+    const invalidi = voti
+      .map((v, i) => ({ v, i }))
+      .filter(x => isNaN(x.v) || x.v < 18 || x.v > 30);
+
+    if (invalidi.length > 0) {
+      const dettagli = invalidi.map(x => `pos ${x.i + 1}: "${raw[x.i]}"`).join(", ");
+      errDiv.textContent = `⚠️ Errore: tutti i voti devono essere numeri compresi tra 18 e 30. Voci non valide: ${dettagli}.`;
+      return;
+    }
+
+    // calcoli
+    const min = Math.min(...voti);
+    const max = Math.max(...voti);
+    const somma = voti.reduce((a, b) => a + b, 0);
+    const media = somma / voti.length;
+
+    // aggiorno solo gli span dentro le label
+    minSpan.textContent = min;
+    maxSpan.textContent = max;
+    avgSpan.textContent = media.toFixed(2);
+  }
+</script>
+
+</body>
+</html>

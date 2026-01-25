@@ -1,0 +1,9 @@
+input[type="text"], 
+input[type="password"], 
+input[type="email"] {
+  width: 250px;          /* larghezza fissa uguale per tutti */
+  padding: 8px;
+  margin-bottom: 15px;   /* spazio tra i campi */
+  margin-left: 20px;
+  box-sizing: border-box; /* include padding nella larghezza */
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalk Blog</title>
+    <link rel="stylesheet" href="../style/blog.css">
+    <!-- <link rel="stylesheet" href="../style/blogResponsive.css"> -->
+    <style>
+        .inline-form {
+            display: flex;         /* Il form diventa un contenitore flex orientato da destra verso sinistra */
+            gap: 10px;             /* Spazio tra  */
+            max-width: 400px;
+        }
+
+        .inline-form input[type="text"] {
+            flex: 1;               /* Occupa lo spazio rimanente */
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .inline-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .inline-form button:hover {
+            background-color: #555;
+        }
+        
+        .article {
+            margin-bottom: 20px;
+        }
+            
+        .article:hover {
+            background-color: grey;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>TechTalk Blog</h1>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/articles.html">Articoli</a></li>
+            <li><a href="../pages/contact.html">Contattaci</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <form action="https://httpbin.org/get" method="get" class="inline-form">
+            <div>
+                <label for="nome">Ricerca per titolo:</label>
+                <input type="text" id="search" name="Titolo" required>
+            </div>
+            <button type="submit">Cerca</button>
+        </form>
+        <h2>Articoli</h2>
+        <div class="article">
+            <h3>Le ultime novità su AI</h3>
+            <p>
+                L'intelligenza artificiale (AI) sta trasformando profondamente numerosi settori, dalla medicina all'industria, fino al mondo creativo. 
+                Nel campo della salute, l'AI permette diagnosi più precise e rapide, migliorando le possibilità di trattamenti personalizzati. 
+                Nell'industria, le tecnologie di automazione avanzate incrementano la produttività e riducono gli errori, mentre nell'arte e nella creatività, l'AI sta aprendo nuove possibilità di espressione. 
+                Inoltre, l'intelligenza artificiale sta svolgendo un ruolo cruciale nella lotta contro il cambiamento climatico, contribuendo a soluzioni sostenibili per la gestione delle risorse e delle reti energetiche. 
+                Tuttavia, l'AI solleva importanti questioni etiche, come la protezione dei dati e l'impatto sul lavoro, che richiedono una riflessione collettiva e la creazione di normative adeguate. 
+                In sintesi, l'AI sta evolvendo rapidamente, offrendo soluzioni innovative, ma presentando anche nuove sfide che la società deve affrontare con responsabilità.
+            </p>
+        </div>
+
+        <div class="article">
+            <h3>Il futuro del 5G</h3>
+            <p>
+                Con l'avvento del 5G, le possibilità di connessione si moltiplicano, aprendo la strada a una nuova era tecnologica. 
+                Questa tecnologia promette di rivoluzionare diversi settori, dall'industria all'intrattenimento, migliorando la velocità di trasferimento dati, la capacità di rete e la latenza. 
+                Le città intelligenti, i veicoli autonomi e l'Internet of Things (IoT) saranno tra i principali beneficiari, grazie alla capacità del 5G di supportare miliardi di dispositivi connessi simultaneamente. 
+                Tuttavia, la piena adozione del 5G dipenderà dall'espansione delle infrastrutture e dall'accesso equo a questa tecnologia, elementi cruciali per garantire che i vantaggi siano diffusi a livello globale. 
+                In sintesi, il 5G rappresenta non solo un'evoluzione, ma una vera rivoluzione che cambierà il modo in cui viviamo e lavoriamo.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 TechTalk Blog. Tutti i diritti riservati.</p>
+    </div>
+</body>
+</html>
+

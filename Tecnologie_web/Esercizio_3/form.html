@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>Form di Registrazione</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <h2>Registrazione Utente</h2>
+    <form >
+
+      <!-- Username -->
+      <label for="username">Nome Utente:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <!-- Password -->
+      <label for="password">Password:</label>
+      <input type="text" id="password" name="password" required><br>
+
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required><br><br><br><br>
+
+      <!-- Gender (Radio Button) -->
+      <label>Genere:</label><br><br>
+      <label>Maschio:<input type="radio" name="gender" value="Maschio" required></label>
+      <label>Femmina:<input type="radio" name="gender" value="Femmina" required></label><br><br><br><br>
+
+      <!-- Interests (Checkbox) -->
+      <label>Interessi:</label><br><br>
+      <label>Musica<input type="checkbox" name="interests" value="musica"></label>
+      <label>Viaggi<input type="checkbox" name="interests" value="viaggi"></label>
+      <label>Sport<input type="checkbox" name="interests" value="sport"></label>
+      <label>Cultura<input type="checkbox" name="interests" value="cultura"></label><br><br><br><br>
+
+      <!-- Country (Select Dropdown) -->
+      <label for="country">Paese:</label>
+      <select id="country" name="country" required>
+        <option value="">Seleziona un paese</option>
+        <option value="italia">Italia</option>
+        <option value="francia">Francia</option>
+        <option value="germania">Germania</option>
+        <option value="spagna">Spagna</option>
+        <option value="altro">Altro</option>
+      </select><br><br>
+
+      <!-- Submit Button -->
+      <button type="submit">Registrati</button>
+
+    </form>
+  </div>
+</body>
+</html>

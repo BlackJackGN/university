@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Form</title>
+    <style>
+        input {
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form di Registrazione</h1>
+    <form>
+        <label for="nome">Nome:</label> </label><input type="text" name="nome" id="nome">
+        <br>
+        <label for="email">Email:</label><input type="text" name="email" id="email">
+        <br>
+        <label for="eta">Età:</label><input type="number" name="eta" id="eta">
+        <input type="submit" value="Invia">
+    </form>
+    
+    <script>
+        var formObject=document.getElementById("form");
+        console.log(formObject);
+    </script>
+</body>
+</html>
