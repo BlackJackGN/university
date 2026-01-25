@@ -1,0 +1,29 @@
+package Exercises.generics;
+
+public class Measure {
+
+    public interface Measurer<T> {
+        double measure(T item);
+    }
+
+    public static <T> T max(T[] array, Measurer<T> measurer) {
+        T max = array[0];
+        for (T item : array) {
+            if (measurer.measure(item) > measurer.measure(max)) {
+                max = item;
+            }
+        }
+        return max;
+    }
+
+    public static <T> T min(T[] array, Measurer<T> measurer) {
+        T min = array[0];
+        for (T item : array) {
+            if (measurer.measure(item) < measurer.measure(min)) {
+                min = item;
+            }
+        }
+        return min;
+    }
+
+}
